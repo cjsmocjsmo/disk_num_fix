@@ -11,10 +11,11 @@ fn main() {
         let (dir, file) = split_path(&mp3).unwrap();
         // println!("Dir: {:?}, File: {:?}", dir, file);
         if file.chars().take(2).all(|c| c.is_digit(10)) {
-            println!("The first two characters of the file are digits.");
-        } else {
-            println!("The first two characters of the file are not digits.");
-        }
+            println!("The first two characters of the file are digits.\n{}", mp3);
+        } 
+        // else {
+        //     println!("The first two characters of the file are not digits.");
+        // }
     }
 }
 

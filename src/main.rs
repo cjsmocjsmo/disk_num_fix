@@ -8,10 +8,10 @@ fn main() {
     let media_files = find_media(&dir_path);
 
     for mp3 in media_files {
-        let (dir, file) = split_path(&mp3).unwrap();
+        let (_dir, file) = split_path(&mp3).unwrap();
         // println!("Dir: {:?}, File: {:?}", dir, file);
         if file.chars().take(2).all(|c| c.is_digit(10)) {
-            println!("The first two characters of the file are digits.\n{}", mp3);
+            println!("{}", file);
         } 
         // else {
         //     println!("The first two characters of the file are not digits.");

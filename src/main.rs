@@ -1,4 +1,5 @@
 use std::path::Path;
+use std::fs;
 
 use walkdir::WalkDir;
 
@@ -14,8 +15,10 @@ fn main() {
             if file.chars().nth(0) == Some('0') {
                 file.remove(0);
                 println!("First character '0' removed. New file name:\n {:?}", file);
-                let fullpath = dir + &file;
+                let mut fullpath = dir + "/" + &file;
+                fullpath = fullpath.replace(" ", "_");
                 println!("Full path:\n {:?}", fullpath);
+                // fs::rename(&mp3, &fullpath).expect("Failed to rename file");
             } else {
                 println!("The first two characters of the file are digits.");
             }

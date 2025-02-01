@@ -9,7 +9,7 @@ fn main() {
 
     for mp3 in media_files {
         let (dir, file) = split_path(&mp3).unwrap();
-        println!("Dir: {:?}, File: {:?}", dir, file);
+        // println!("Dir: {:?}, File: {:?}", dir, file);
         if file.chars().take(2).all(|c| c.is_digit(10)) {
             println!("The first two characters of the file are digits.");
         } else {

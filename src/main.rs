@@ -8,12 +8,14 @@ fn main() {
     let media_files = find_media(&dir_path);
 
     for mp3 in media_files {
-        let (_dir, mut file) = split_path(&mp3).unwrap();
+        let (dir, mut file) = split_path(&mp3).unwrap();
         if file.chars().take(2).all(|c| c.is_digit(10)) {
             println!("{}", file);
             if file.chars().nth(0) == Some('0') {
                 file.remove(0);
                 println!("First character '0' removed. New file name:\n {:?}", file);
+                let fullpath = dir + &file;
+                println!("Full path:\n {:?}", fullpath);
             } else {
                 println!("The first two characters of the file are digits.");
             }

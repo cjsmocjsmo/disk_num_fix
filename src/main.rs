@@ -18,7 +18,7 @@ fn main() {
                 let mut fullpath = dir + "/" + &file;
                 fullpath = fullpath.replace(" ", "_");
                 println!("Full path:\n {:?}", fullpath);
-                // fs::rename(&mp3, &fullpath).expect("Failed to rename file");
+                fs::rename(&mp3, &fullpath).expect("Failed to rename file");
             } else {
                 println!("The first two characters of the file are digits.");
             }
